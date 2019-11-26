@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Typically there is a one-to-one relationship between a URL string
 | and its corresponding controller class/method. The segments in a
-| URL normally follow this pattern:
+| URL normally follow this pattern:w
 |
 |	example.com/class/method/id/
 |
@@ -49,6 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'setting';
+$route['default_controller'] = 'penghasilan';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

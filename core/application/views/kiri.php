@@ -10,14 +10,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<nav class="navbar navbar-expand-sm navbar-default">
 		<div id="main-menu" class="main-menu collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active">
-					<a href="<?= base_url()?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="menu-icon fa fa-calendar"></i> Date
-                    </a>	
-                </li>
+				<li class="">
+					<a href="<?=base_url('')?>">
+						<i class="menu-icon fa fa-laptop"></i>
+						Dashboard
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="menu-icon fa fa-cubes"></i>
+						Cucian
+					</a>
+				</li>
+				<li>
+					<a href="<?=base_url('pelanggan')?>">
+					<i class="menu-icon fa fa-users"></i>
+					Data Pelanggan
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="menu-icon fa fa-gear"></i>
+						Admin
+					</a>
+				</li>
+
 				<!-- <li class="menu-title">UI elements</li>
 				<li class="menu-item-has-children dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"

@@ -49,5 +49,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="/elaadmin/assets/js/init/fullcalendar-init.js"></script>
 
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+    <script>
+    $ = jQuery
+    $('[data-content="datatable"]').dataTable();
+    </script>
+
 </body>
 </html>
