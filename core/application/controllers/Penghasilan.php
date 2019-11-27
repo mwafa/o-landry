@@ -61,6 +61,7 @@ class Penghasilan extends CI_Controller {
 		$this->db->select('DATE(cucian.masuk) as bulan', false);
 		$this->db->select('paket.nama as paket');
 		$this->db->select('sum(cucian.jumlah * paket.harga) as penghasilan');
+		$this->db->select('sum(cucian.jumlah) as cucian');
 
 		$this->db->join('paket', 'paket.id = cucian.paket', 'left');
 		

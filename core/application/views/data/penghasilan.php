@@ -121,6 +121,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="box-title">
+                    Jumlah Cucian (Kg)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <canvas id="cucian" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -130,31 +148,32 @@ function getRandomColor() {
   }
   return color;
 }
-window.onload = () => {
-    var data = {
-        bulanan : <?=json_encode($penghasilan_bulanan)?> || []
-    }
+var data = {
+    bulanan : <?=json_encode($penghasilan_bulanan)?> || []
+}
 
-    var listBulan = {}
-    var listLabel = []
-    data.bulanan.map(item => {
-        if(item.bulan){
-            index = item.bulan.split("-").slice(0, 2).join("-")
-            listBulan[index] = listBulan[index] || []
-            listBulan[index].push({
-                paket: item.paket,
-                penghasilan: item.penghasilan
-            })
-            if(listLabel.indexOf(item.paket) < 0){
-                listLabel.push(item.paket)
-            }
+var listBulan = {}
+var listLabel = []
+data.bulanan.map(item => {
+    if(item.bulan){
+        index = item.bulan.split("-").slice(0, 2).join("-")
+        listBulan[index] = listBulan[index] || []
+        listBulan[index].push({
+            paket: item.paket,
+            penghasilan: item.penghasilan,
+            cucian: item.cucian
+        })
+        if(listLabel.indexOf(item.paket) < 0){
+            listLabel.push(item.paket)
         }
-    })
-    console.log(listBulan, listLabel)
+    }
+})
+let labels = Object.keys(listBulan).sort()
+console.log(listBulan, listLabel)
 
+window.onload = () => {
     // tabel
-    let labels = Object.keys(listBulan).sort()
-    let datasets = listLabel.map(item => {
+    var datasets = listLabel.map(item => {
                         return {
                             label: item,
                             data: labels.map(i => listBulan[i].filter(i => i.paket == item)[0].penghasilan),
@@ -169,7 +188,6 @@ window.onload = () => {
         color: getRandomColor(),
         type: "bar"
     })
-    console.log(datasets)
     var ctx = document.getElementById('penghasilan');
         var myChart = new Chart(ctx, {
             type: 'bar',
@@ -187,5 +205,40 @@ window.onload = () => {
                 }
             }
         });
+        var datasets = listLabel.map(item => {
+                            return {
+                                label: item,
+                                data: labels.map(i => listBulan[i].filter(i => i.paket == item)[0].cucian),
+                                borderWidth: 1,
+                                backgroundColor: getRandomColor()+88,
+                            }
+                        })
+        datasets.push({
+            label: "Total",
+            data: labels.map(i => listBulan[i].reduce((a, b) => parseFloat(a.cucian) + parseFloat(b.cucian))),
+            color: getRandomColor(),
+            type: "bar"
+        })
+
+        var ctx = document.getElementById('cucian');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
 }
+
+// window.onload = () => {
+// }
 </script>
