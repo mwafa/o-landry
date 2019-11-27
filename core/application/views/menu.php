@@ -31,7 +31,7 @@ $image .= $me->avatar ? $me->avatar : "avatar.jpg";
                 <div id="menuToggle" style="width: 30px;display: inline-block;border-right: solid 1px #aaa;margin-right: 10px;">
                     <i class="fa fa-bars"></i>
                 </div>
-                <a class="navbar-brand"  style="width:inherit" href="./"><img src="/elaadmin/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand"  style="width:inherit" href="./"><img src="/elaadmin/images/logo123.png" alt="Logo"></a>
             </div>
             <div class="right">
                 <div class="user-area dropdown float-right">
@@ -42,7 +42,6 @@ $image .= $me->avatar ? $me->avatar : "avatar.jpg";
                             <a class="nav-link" href="<?=base_url()?>setting/do_upload"><i class="fa fa- user"></i>Change Picture</a>
                             <a class="nav-link" href="<?=base_url()?>setting"><i class="fa fa -cog"></i>Settings</a>
                             <a class="nav-link" href="<?=base_url()?>setting/password"><i class="fa fa- user"></i>Change Password</a>
-
                             <a class="nav-link" href="<?=base_url()?>login/logout"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>

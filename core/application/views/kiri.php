@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="<?=base_url('cucian')?>">
 						<i class="menu-icon fa fa-cubes"></i>
 						Cucian
 					</a>

@@ -4,7 +4,7 @@ function site($variable)
 {
     
     $siteData = array();
-    $siteData['title'] = "Lorem Ipsum";
+    $siteData['title'] = "O-Laundry";
 
 
 
