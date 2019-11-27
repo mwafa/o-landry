@@ -39,7 +39,10 @@ class Cucian extends CI_Controller {
         if(!$data['old'])
         {
             $this->db->where('cucian.status !=', "diambil");
+        }else{
+            $this->db->where('cucian.status', "diambil");
         }
+        $this->db->order_by('status', 'desc');
         $data['cucian'] = $this->db->get('cucian')->result();
         
         $this->load->view('header', $data, FALSE);

@@ -31,7 +31,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <tr>
                             <td><?=$c->id?></td>
                             <td>
-                                <span class="badge badge-primary"><?=$c->status?></span>
+                                <span class="badge badge-<?= $c->status == 'proses' ? 'success': 'primary'?>">
+                                    <?=$c->status?>
+                                </span>
                             </td>
                             <td><?=$c->pelanggan?></td>
                             <td><?=$c->paket?></td>
@@ -40,8 +42,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?=$c->bayar?></td>
                             <?php if(!$old): ?>
                             <td>
+                                <?php if($c->status == "proses"): ?>
                                 <a href="#" class="btn btn-sm btn-outline-success">Selesai</a>
+                                <?php endif?>
+                                <?php if($c->status == "siap"): ?>
                                 <a href="#" class="btn btn-sm btn-outline-primary">Diambil</a>
+                                <?php endif?>
                             </td>
                             <?php endif?>
                         </tr>
