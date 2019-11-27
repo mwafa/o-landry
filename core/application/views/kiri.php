@@ -17,6 +17,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</a>
 				</li>
 				<li>
+					<a href="<?=base_url('cucian_baru')?>">
+						<i class="menu-icon fa fa-cube"></i>
+						Cucian Baru
+					</a>
+				</li>
+				<li>
 					<a href="<?=base_url('cucian')?>">
 						<i class="menu-icon fa fa-cubes"></i>
 						Cucian
@@ -29,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="<?= base_url('setting')?>">
 						<i class="menu-icon fa fa-gear"></i>
 						Admin
 					</a>

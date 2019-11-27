@@ -58,6 +58,10 @@ class Cucian extends CI_Controller {
         $this->index();
     }
 
+    public function update($id, $status)
+    {
+        
+    }
 }
 
 /* End of file Cucian.php */
