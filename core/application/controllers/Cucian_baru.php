@@ -34,7 +34,16 @@ class Cucian_baru extends CI_Controller {
         $this->load->view('kiri', $data, FALSE);
         $this->load->view('data/cucian_baru', $data, FALSE);
         $this->load->view('footer', $data, FALSE);
-    }
+	}
+	
+	public function pelanggan()
+	{
+		$this->db->select('nama, hp, email');
+		
+		$result = $this->db->get('pelanggan')->result();
+		
+		echo json_encode($result);
+	}
 
 
 }

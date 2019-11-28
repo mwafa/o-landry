@@ -52,6 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
+    <script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+    <script src="bower_components/typeahead.js/dist/bloodhound.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 

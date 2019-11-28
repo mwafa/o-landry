@@ -51,7 +51,8 @@ class Penghasilan extends CI_Controller {
 		$this->db->select('sum(cucian.jumlah) as cucian', false);
 		$this->db->select('count( DISTINCT(cucian.pelanggan)) as pengguna', false);
 		$this->db->join('paket', 'paket.id = cucian.paket', 'left');
-		$this->db->where('MONTH(cucian.masuk)', "MONTH(NOW())", false);
+		$this->db->where('MONTH(cucian.keluar)', "MONTH(NOW())", false);
+		$this->db->where('cucian.status', "diambil");
 		return $this->db->get('cucian')->row();
 		
 	}
@@ -68,6 +69,8 @@ class Penghasilan extends CI_Controller {
 		$this->db->group_by('MONTH(cucian.masuk)', false);
 		$this->db->group_by('paket.id');
 
+		$this->db->where('cucian.status', 'diambil');
+		
 		return $this->db->get('cucian')->result();
 		
 	}
