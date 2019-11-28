@@ -79,8 +79,8 @@ input[type=submit] {
 					<div class="form-group">
 						<label for="">Pelanggan</label>
 						<div class="input-group">
-							<input type="text" class="form-control" id="nama-pelanggan" required placeholder="Nama Pelanggan"
-								autocomplete="false">
+							<input  type="text" class="form-control" name="nama" id="nama-pelanggan" required placeholder="Nama Pelanggan"
+              autocomplete="new-password" autofill="false">
 						</div>
 					</div>
 					<div class="form-group">
@@ -99,34 +99,27 @@ input[type=submit] {
 					<h3 class="mb-3">Data Cucian</h3>
 					<div class="form-group">
 						<div class="input-group">
-							<input type="number" step=".01" class="form-control" required placeholder="Berat Cucian">
+							<input type="number" name="berat" min="0" value="0" step=".01" class="form-control" required placeholder="Berat Cucian">
 							<div class="input-group-append">
 								<span class="input-group-text">Kg</span>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="">Paket Cucian</label>
+            <label for="">Paket Cucian</label>
+            <?php foreach($paket as $p): ?>
 						<div class="input-group">
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="exampleRadios" id="paket-0"
-									value="option1" checked>
-								<label class="form-check-label" for="paket-0">
-									Cuci Biasa (Rp. 2500,- /Kg)
+								<input data-harga="<?=$p->harga?>" class="form-check-input" type="radio" name="paket" id="paket-<?=$p->id?>"
+									value="<?=$p->id?>" checked>
+								<label class="form-check-label" for="paket-<?=$p->id?>">
+									<?=$p->nama?> (Rp. <?=$p->harga?>,- /Kg)
 								</label>
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="exampleRadios" id="paket-1"
-									value="option1">
-								<label class="form-check-label" for="paket-1">
-									Cuci + Setrika (Rp. 3000,- /Kg)
-								</label>
-							</div>
-						</div>
+            </div>
+            <?php endforeach?>
 						<h2>
-							Harga: Rp. 10000,-
+							Harga: Rp. <span id="harga">0</span>,-
 						</h2>
 					</div>
 					<button class="btn btn-success">
@@ -140,7 +133,17 @@ input[type=submit] {
 
 <script>
 	window.onload = () => {
-		
+		let berat = document.querySelector('[name="berat"]')
+		let paket = document.querySelectorAll('[name="paket"]')
+    let harga = document.getElementById('harga')
+    
+    let updateHarga = () => {
+      let hargaPerKg = document.querySelector('[name="paket"]:checked').getAttribute('data-harga')
+      harga.innerText = parseInt(berat.value * hargaPerKg)
+    }
+
+    paket.forEach(item => item.addEventListener('input', updateHarga))
+    berat.addEventListener('input', updateHarga)
 	}
 
 </script>
@@ -246,7 +249,6 @@ function autocomplete(inp, arr, callback) {
 fetch("<?=base_url('cucian_baru/pelanggan')?>").then(data => data.json()).then(pelanggan => {
     autocomplete(document.getElementById("nama-pelanggan"), pelanggan.map(user => user.nama), nama => {
         var user = pelanggan.filter(item => item.nama == nama)[0] || {}
-        console.log(user)
         document.querySelector('[name="hp"]').value = user.hp
         document.querySelector('[name="email"]').value = user.email
     });

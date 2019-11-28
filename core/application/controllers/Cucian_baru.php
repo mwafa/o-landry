@@ -27,7 +27,10 @@ class Cucian_baru extends CI_Controller {
 
     public function index()
     {
-        $data = $this->data;
+		$data = $this->data;
+		
+		$data['paket'] = $this->db->get('paket')->result();
+		
         
         $this->load->view('header', $data, FALSE);
         $this->load->view('menu', $data, FALSE);
