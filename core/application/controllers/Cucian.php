@@ -114,13 +114,12 @@ class Cucian extends CI_Controller {
         
         $cucian = $this->db->get('pelanggan')->row();
         
-        $this->load->view('data/email', [
+        $message = $this->load->view('data/email', [
             'cucian' => $cucian
-        ], FALSE);
+        ], true);
         
-        $this->load->library('data/email');
         
-        $this->$this->load->library('email');
+        $this->load->library('email');
         $this->email->initialize([
             "mailtype" => "html"
         ]);
@@ -132,7 +131,7 @@ class Cucian extends CI_Controller {
         $this->email->subject('Update Status Cucian Kode: '.$id);
         $this->email->message('Status Cucian Telah di update:');
         
-        $this->email->send();
+        $this->email->send($message);
         
     }
 }
