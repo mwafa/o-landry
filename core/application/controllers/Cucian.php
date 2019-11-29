@@ -71,6 +71,7 @@ class Cucian extends CI_Controller {
         if($update)
         {
             $this->data['alert'] = "Cucian dengan kode <b>$id</b> selesai diproses";
+            $this->sendMail($id);
         }
         $this->index();
         
@@ -88,8 +89,51 @@ class Cucian extends CI_Controller {
         if($update)
         {
             $this->data['alert'] = "Cucian dengan kode <b>$id</b> telah diambil pelanggan";
+            $this->send_email($id);
         }
         $this->index();
+    }
+
+    public function send_email($id)
+    {
+
+		$this->db->select('cucian.id as kode');
+		$this->db->select('pelanggan.nama as nama');
+		$this->db->select('pelanggan.email as email');
+		$this->db->select('cucian.masuk as tgl_masuk');
+		$this->db->select('cucian.status');
+		$this->db->select('paket.nama as paket');
+		$this->db->select('paket.harga as harga');
+		$this->db->select('cucian.jumlah as berat');
+		$this->db->select('cucian.jumlah * paket.harga as bayar', false);
+        
+        $this->db->join('cucian', 'cucian.pelanggan = pelanggan.id', 'left');
+        $this->db->join('paket', 'cucian.paket = paket.id', 'left');
+        
+        $this->db->where('cucian.id', $id);
+        
+        $cucian = $this->db->get('pelanggan')->row();
+        
+        $this->load->view('data/email', [
+            'cucian' => $cucian
+        ], FALSE);
+        
+        $this->load->library('data/email');
+        
+        $this->$this->load->library('email');
+        $this->email->initialize([
+            "mailtype" => "html"
+        ]);
+
+        
+        $this->email->from('aku@mwafa.net', 'Admin O-Laundry');
+        $this->email->to($cucian->email);
+        
+        $this->email->subject('Update Status Cucian Kode: '.$id);
+        $this->email->message('Status Cucian Telah di update:');
+        
+        $this->email->send();
+        
     }
 }
 
