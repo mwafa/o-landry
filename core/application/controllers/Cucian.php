@@ -31,6 +31,7 @@ class Cucian extends CI_Controller {
 
         $this->db->select('cucian.id, cucian.status, pelanggan.nama as pelanggan, paket.nama as paket, jumlah');
         $this->db->select('paket.harga as harga');
+        $this->db->select('cucian.masuk as tgl_masuk');
         $this->db->select('paket.harga * cucian.jumlah as bayar', false);
         
         $this->db->join('pelanggan', 'cucian.pelanggan = pelanggan.id', 'left');

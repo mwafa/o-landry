@@ -40,6 +40,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        .content{
            min-height: 100vh
        }
+       @media print{
+           .no-print, .site-footer{
+               display: none !important;
+           }
+           .menu {
+               display: none;
+           }
+           .content {
+               background-color: #fff !important;
+               min-height: auto !important;
+           }
+           .right-panel {
+               margin: 0px !important;
+           }
+           .row > div {
+               width: auto !important;
+           }
+
+       }
     </style>
 </head>
 

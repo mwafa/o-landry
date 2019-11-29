@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /* End of file filename.php */
 ?>
-<aside id="left-panel" class="left-panel">
+<aside id="left-panel" class="left-panel no-print">
 	<nav class="navbar navbar-expand-sm navbar-default">
 		<div id="main-menu" class="main-menu collapse navbar-collapse">
 			<ul class="nav navbar-nav">

@@ -80,7 +80,46 @@ class Cucian_baru extends CI_Controller {
 			'paket' => $this->input->post('paket')
 		]);
 
-		$this->output->set_content_type('application/json')->set_output(json_encode($insertCucian));
+		if($insertCucian)
+		{
+			$cucianID = $this->db->insert_id();
+			$this->data['alert'] = "Cucian baru telah dimasukkan kedalam database.";
+
+			$this->invoice($cucianID);
+		}
+
+	}
+
+	private function invoice($id)
+	{
+		$data = $this->data;
+
+		$this->db->select('cucian.id as kode');
+		$this->db->select('pelanggan.nama as nama');
+		$this->db->select('cucian.masuk as tgl_masuk');
+		$this->db->select('paket.nama as paket');
+		$this->db->select('paket.harga as harga');
+		$this->db->select('cucian.jumlah as berat');
+		$this->db->select('cucian.jumlah * paket.harga as bayar', false);
+		
+
+		$this->db->join('pelanggan', 'pelanggan.id = cucian.pelanggan', 'left');
+		$this->db->join('paket', 'paket.id = cucian.paket', 'left');
+
+		$this->db->where('cucian.id', $id);
+		
+		
+
+		$data['cucian'] = $this->db->get('cucian')->row();
+		
+		
+        $this->load->view('header', $data, FALSE);
+        $this->load->view('menu', $data, FALSE);
+        $this->load->view('kiri', $data, FALSE);
+        $this->load->view('data/invoice', $data, FALSE);
+        $this->load->view('footer', $data, FALSE);
+		
+		
 	}
 
 }

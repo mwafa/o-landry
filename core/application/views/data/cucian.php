@@ -16,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <tr>
                             <th>Kode</th>
                             <th>Status</th>
+                            <th>Tanggal Masuk</th>
                             <th>Nama</th>
                             <th>Paket</th>
                             <th>Jumlah (Kg)</th>
@@ -35,6 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <?=$c->status?>
                                 </span>
                             </td>
+                            <td><?=$c->tgl_masuk?></td>
                             <td><?=$c->pelanggan?></td>
                             <td><?=$c->paket?></td>
                             <td><?=$c->jumlah?></td>

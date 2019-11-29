@@ -26,7 +26,7 @@ $image .= $me->avatar ? $me->avatar : "avatar.jpg";
 </style>
 <div id="right-panel" class="right-panel">
         <!-- Header-->
-        <div class="menu fixed-top d-flex justify-content-between">
+        <div class="no-print menu fixed-top d-flex justify-content-between">
             <div class="left align-self-center">
                 <div id="menuToggle" style="width: 30px;display: inline-block;border-right: solid 1px #aaa;margin-right: 10px;">
                     <i class="fa fa-bars"></i>
