@@ -1,7 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
+<?php if(isset($alert)):?>
+<div class="row">
+    <div class="col">
+        <div class="alert alert-primary">
+            <?=$alert?>
+        </div>
+    </div>
+</div>
+<?php endif?>
 <div class="row">
     <div class="col">
         <div class="card">
@@ -45,10 +53,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <?php if(!$old): ?>
                             <td>
                                 <?php if($c->status == "proses"): ?>
-                                <a href="#" class="btn btn-sm btn-outline-success">Selesai</a>
+                                <a href="<?=base_url('cucian/selesai/'.$c->id)?>" class="btn btn-sm btn-outline-success">Selesai</a>
                                 <?php endif?>
                                 <?php if($c->status == "siap"): ?>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Diambil</a>
+                                <a href="<?=base_url('cucian/diambil/'.$c->id)?>" class="btn btn-sm btn-outline-primary">Diambil</a>
                                 <?php endif?>
                             </td>
                             <?php endif?>

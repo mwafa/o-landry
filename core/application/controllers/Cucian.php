@@ -59,9 +59,37 @@ class Cucian extends CI_Controller {
         $this->index();
     }
 
-    public function update($id, $status)
+    public function selesai($id)
     {
+        $this->db->where('cucian.id', $id);
         
+        $this->db->set('cucian.selesai', 'NOW()', false);
+        $update = $this->db->update('cucian', [
+            'status' => 'siap'
+        ]);
+
+        if($update)
+        {
+            $this->data['alert'] = "Cucian dengan kode <b>$id</b> selesai diproses";
+        }
+        $this->index();
+        
+    }
+
+    public function diambil($id)
+    {
+        $this->db->where('cucian.id', $id);
+        
+        $this->db->set('cucian.keluar', 'NOW()', false);
+        $update = $this->db->update('cucian', [
+            'status' => 'diambil'
+        ]);
+
+        if($update)
+        {
+            $this->data['alert'] = "Cucian dengan kode <b>$id</b> telah diambil pelanggan";
+        }
+        $this->index();
     }
 }
 
