@@ -129,9 +129,9 @@ class Cucian extends CI_Controller {
         $this->email->to($cucian->email);
         
         $this->email->subject('Update Status Cucian Kode: '.$id);
-        $this->email->message('Status Cucian Telah di update:');
+        $this->email->message($message);
         
-        $this->email->send($message);
+        $this->email->send();
         
     }
 }
