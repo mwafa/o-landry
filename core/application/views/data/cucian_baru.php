@@ -118,7 +118,7 @@ input[type=submit] {
 							</div>
             </div>
             <?php endforeach?>
-						<h2>
+						<h2 class="mt-3">
 							Harga: Rp. <span id="harga">0</span>
 						</h2>
 					</div>
