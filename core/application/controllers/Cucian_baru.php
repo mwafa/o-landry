@@ -48,6 +48,40 @@ class Cucian_baru extends CI_Controller {
 		echo json_encode($result);
 	}
 
+	public function insert()
+	{
+		
+		$this->db->where('nama', $this->input->post('nama'));
+		$this->db->where('hp', $this->input->post('hp'));
+		$this->db->where('email', $this->input->post('email'));
+		
+		$db = $this->db->get('pelanggan');
+		
+		if($db->num_rows())
+		{
+			$pelangganID = $db->row()->id;
+		}
+		else
+		{
+		$this->db->insert('pelanggan', [
+			"nama" => $this->input->post('nama'),
+			"hp" => $this->input->post('hp'),
+			"email" => $this->input->post('email'),
+			]);
+			
+		$pelangganID = $this->db->insert_id();
+		}
+		
+		$this->db->set('masuk', 'NOW()', false);
+		
+		$insertCucian = $this->db->insert('cucian', [
+			'pelanggan' => $pelangganID,
+			'jumlah' => $this->input->post('berat'),
+			'paket' => $this->input->post('paket')
+		]);
+
+		$this->output->set_content_type('application/json')->set_output(json_encode($insertCucian));
+	}
 
 }
 
