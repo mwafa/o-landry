@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="row">
 	<div class="col-12 mb-2">
 		<strong>
-			Data Bulan ini
+			Data Bulan ini (sudah diambil)
 		</strong>
 	</div>
 	<div class="col-lg-4 col-md-6">
@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="stat-content">
 						<div class="text-left dib">
-							<div class="stat-text">Rp. <span class="count"><?=$penghasilan_bulan_ini?></span></div>
+							<div class="stat-text">Rp. <span class=""><?=$penghasilan_bulan_ini?></span></div>
 							<div class="stat-heading">Penghasilan</div>
 						</div>
 					</div>
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="stat-content">
 						<div class="text-left dib">
-							<div class="stat-text"><span class="count"><?=$cucian_bulan_ini?></span> Kg</div>
+							<div class="stat-text"><span class=""><?=$cucian_bulan_ini?></span> Kg</div>
 							<div class="stat-heading">Cucian</div>
 						</div>
 					</div>
@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="stat-content">
 						<div class="text-left dib">
-							<div class="stat-text"><span class="count"><?=$pengguna_bulan_ini?></span></div>
+							<div class="stat-text"><span class=""><?=$pengguna_bulan_ini?></span></div>
 							<div class="stat-heading">Pelanggan</div>
 						</div>
 					</div>
