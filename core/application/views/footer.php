@@ -61,6 +61,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script>
     $ = jQuery
     $('[data-content="datatable"]').dataTable();
+
+    // covert to localstring
+
+    Number.prototype.format = function(n, x, s, c) {
+        var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\D' : '$') + ')',
+            num = this.toFixed(Math.max(0, ~~n));
+
+        return (c ? num.replace('.', c) : num).replace(new RegExp(re, 'g'), '$&' + (s || ','));
+    };
+
+    document
+    .querySelectorAll('.rp')
+    .forEach(item => {
+        item.innerText = Number(item.innerText).format(2, 3, ".", ",")
+        console.log(typeof(item.innerText))
+    })
     </script>
 
 </body>

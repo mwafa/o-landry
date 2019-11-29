@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 					<div class="stat-content">
 						<div class="text-left dib">
-							<div class="stat-text">Rp. <span class=""><?=$penghasilan_bulan_ini?></span></div>
+							<div class="stat-text">Rp. <span class="rp"><?=$penghasilan_bulan_ini?></span></div>
 							<div class="stat-heading">Penghasilan</div>
 						</div>
 					</div>

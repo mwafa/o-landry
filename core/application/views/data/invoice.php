@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </tr>
                             <tr>
                                 <th>Paket Cucian</th>
-                                <td><?=$cucian->paket?> (Rp. <?=$cucian->harga?>,-/kg)</td>
+                                <td><?=$cucian->paket?> (Rp. <span class="rp"><?=$cucian->harga?></span>/kg)</td>
                             </tr>
                             <tr>
                                 <th>Berat</th>
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </tr>
                             <tr>
                                 <th>Total Harga</th>
-                                <td class="display-4">Rp. <?=$cucian->bayar?>,-</td>
+                                <td class="display-4">Rp. <span class="rp"><?=$cucian->bayar?></span></td>
                             </tr>
                         </table>
                         <small>Terimakasih telah mempercayakan cucian anda kepada kami.</small>

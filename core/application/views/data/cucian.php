@@ -48,8 +48,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?=$c->pelanggan?></td>
                             <td><?=$c->paket?></td>
                             <td><?=$c->jumlah?></td>
-                            <td><?=$c->harga?></td>
-                            <td><?=$c->bayar?></td>
+                            <td class="rp"><?=$c->harga?></td>
+                            <td class="rp"><?=$c->bayar?></td>
                             <?php if(!$old): ?>
                             <td>
                                 <?php if($c->status == "proses"): ?>

@@ -113,13 +113,13 @@ input[type=submit] {
 								<input data-harga="<?=$p->harga?>" class="form-check-input" type="radio" name="paket" id="paket-<?=$p->id?>"
 									value="<?=$p->id?>" checked>
 								<label class="form-check-label" for="paket-<?=$p->id?>">
-									<?=$p->nama?> (Rp. <?=$p->harga?>,- /Kg)
+									<?=$p->nama?> (Rp. <span class="rp"><?=$p->harga?></span>,- /Kg)
 								</label>
 							</div>
             </div>
             <?php endforeach?>
 						<h2>
-							Harga: Rp. <span id="harga">0</span>,-
+							Harga: Rp. <span id="harga">0</span>
 						</h2>
 					</div>
 					<button class="btn btn-success">
@@ -139,7 +139,7 @@ input[type=submit] {
     
     let updateHarga = () => {
       let hargaPerKg = document.querySelector('[name="paket"]:checked').getAttribute('data-harga')
-      harga.innerText = parseInt(berat.value * hargaPerKg)
+      harga.innerText = Number(berat.value * hargaPerKg).format(2, 3, ".", ",") || "---"
     }
 
     paket.forEach(item => item.addEventListener('input', updateHarga))
