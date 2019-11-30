@@ -71,7 +71,7 @@ class Cucian extends CI_Controller {
         if($update)
         {
             $this->data['alert'] = "Cucian dengan kode <b>$id</b> selesai diproses";
-            $this->sendMail($id);
+            $this->send_email($id);
         }
         $this->index();
         
