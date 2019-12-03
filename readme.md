@@ -29,3 +29,7 @@ $config['base_url'] = 'http://loman.localhost/core/';
     $this->issendEmail = false; // change true if server can send email.
 ```
 
+# Halaman
+
+1. __/core__ : Halaman admin
+2. __/user__ : Halaman user untuk cek cucian
