@@ -1,0 +1,402 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sumon Rahman">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>O-Laundry</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    .d-none{
+        display: none;
+    }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-content -->
+    <div class="preloader">
+        <span><i class="lnr lnr-sun"></i></span>
+    </div>
+    <!-- MainMenu-Area -->
+    <nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Logo"></a> -->
+            </div>
+            <div class="collapse navbar-collapse" id="primary_menu">
+                <ul class="nav navbar-nav mainmenu">
+                    <li class="active"><a href="#home_page">Home</a></li>
+                    <li class="active"><a href="#cek">Cek Cucian</a></li>
+                    <li><a href="#about_page">About</a></li>
+                    <li><a href="#price_page">Pricing</a></li>
+                    <li><a href="#contact_page">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- MainMenu-Area-End -->
+    <!-- Home-Area -->
+    <header class="home-area overlay" id="home_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 hidden-sm col-md-5">
+                    <figure class="mobile-image wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/header-mobile.png" alt="">
+                    </figure>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <div class="space-80 hidden-xs"></div>
+                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">Mencuci Lebih Mudah dan Murah berasama kami.</h1>
+                    <div class="space-20"></div>
+                    <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                        <p>Kami akan memberitahumu sesaat setelah cucian siap.</p>
+                    </div>
+                    <div class="space-20"></div>
+                    <a href="#" class="bttn-white wow fadeInUp" data-wow-delay="0.8s"><i
+                            class="lnr lnr-download"></i>Download App</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Home-Area-End -->
+    <!-- About-Area -->
+    <section class="section-padding" id="about_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="page-title text-center">
+                        <img src="images/about-logo.png" alt="About Logo">
+                        <div class="space-20"></div>
+                        <h5 class="title">About O-launry</h5>
+                        <div class="space-30"></div>
+                        <h3 class="blue-color">Kamu bisa mencuci pakaian di tempat kami dengan pelayanan terbaik</h3>
+                        <div class="space-20"></div>
+                        <p>Kami akan memberitahumu sesaat ketika cucian telah siap.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About-Area-End -->
+
+    <!-- Subscribe-Form -->
+    <div class="subscribe-area section-padding" id="cek">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    <div class="subscribe-form text-center">
+                        <h3 class="blue-color">Cek Status Cucian Anda</h3>
+                        <div class="space-20"></div>
+                        <form id="mc-form">
+                            <input type="text" class="control" placeholder="Masukkan Nama / Kode Cucian"
+                                required="required" id="mc-text">
+                            <button class="bttn-white active" type="submit"><span class="lnr lnr-magnifier"></span>
+                                Cari</button>
+                            <label class="mt10" for="mc-email"></label>
+                            <div class="card box">
+                                <p id="cari-status"></p>
+                                <style>
+                                td{
+                                    text-align: left;
+                                }
+                                </style>
+                                <table class="table d-none" id="cucianku">
+                                    <tbody>
+                                        <tr>
+                                            <th>KODE</th>
+                                            <td id="cucian-id">157</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Nama Pelanggan</th>
+                                            <td id="cucian-nama">Wafa</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Status</th>
+                                            <td><span id="cucian-status" class="badge badge-success">SIAP</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tgl Masuk</th>
+                                            <td id="cuucian-masuk">2019-12-02 16:27:57</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Paket Cucian</th>
+                                            <td>Cuci Biasa (Rp. <span class="rp" id="cucian-harga">2.500,00</span>/kg)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Berat</th>
+                                            <td><span id="cucian-berat"></span> Kg</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Total Harga</th>
+                                            <td class="display-4">Rp. <span class="rp" id="cucian-bayar">10.000,00</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Subscribe-Form-Area -->
+    <!-- Testimonial-Area -->
+    <section class="testimonial-area" id="testimonial_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title text-center">
+                        <h5 class="title">Testimoni Pelanggan</h5>
+                        <div class="space-60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="team-slide">
+                        <div class="team-box">
+                            <div class="team-image">
+                                <img src="images/team-1.png" alt="">
+                            </div>
+                            <h4>Ashekur Rahman</h4>
+                            <h6 class="position">Pelanggan</h6>
+                            <p>Cuciannya bersih dan wangi.</p>
+                        </div>
+                        <div class="team-box">
+                            <div class="team-image">
+                                <img src="images/team-2.jpg" alt="">
+                            </div>
+                            <h4>Muhammad Wafa</h4>
+                            <h6 class="position">Pelanggan</h6>
+                            <p>Pelayanannya sangat baik dan cepat</p>
+                        </div>
+                        <div class="team-box">
+                            <div class="team-image">
+                                <img src="images/team-3.jpg" alt="">
+                            </div>
+                            <h4>Nina B</h4>
+                            <h6 class="position">Pelanggan</h6>
+                            <p>Aku bisa setiap saat ngecek cucianku</p>
+                        </div>
+                        <div class="team-box">
+                            <div class="team-image">
+                                <img src="images/team-1.png" alt="">
+                            </div>
+                            <h4>Bambang Susilo</h4>
+                            <h6 class="position">Pelanggan</h6>
+                            <p>Bagus banget aplikasinya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial-Area-End -->
+    <!-- Download-Area -->
+    <div class="download-area overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 hidden-sm">
+                    <figure class="mobile-image">
+                        <img src="images/download-image.png" alt="">
+                    </figure>
+                </div>
+                <div class="col-xs-12 col-md-6 section-padding">
+                    <h3 class="white-color">Download The App</h3>
+                    <div class="space-20"></div>
+                    <p>Download aplikasinya dan dapatkan kemudahannya.</p>
+                    <div class="space-60"></div>
+                    <a href="#" class="bttn-white sq"><img src="images/apple-icon.png" alt="apple icon"> Apple Store</a>
+                    <a href="#" class="bttn-white sq"><img src="images/play-store-icon.png" alt="Play Store Icon"> Play
+                        Store</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Download-Area-End -->
+    <!--Price-Area -->
+    <section class="section-padding price-area" id="price_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title text-center">
+                        <h5 class="title">List Harga</h5>
+                        <div class="space-60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-rocket"></span>
+                            </div>
+                            <h4 class="upper">Cuci Biasa</h4>
+                        </div>
+                        <div class="price-body">
+                        </div>
+                        <div class="price-rate">
+                            <sup>Rp</sup> <span class="rate">2,500</span> <small>/Kg</small>
+                        </div>
+                    </div>
+                    <div class="space-30 hidden visible-xs"></div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="price-box">
+                        <div class="price-header">
+                            <div class="price-icon">
+                                <span class="lnr lnr-diamond"></span>
+                            </div>
+                            <h4 class="upper">Cuci + Strika</h4>
+                        </div>
+                        <div class="price-body">
+                        </div>
+                        <div class="price-rate">
+                            <sup>Rp</sup> <span class="rate">3,000</span> <small>/Kg</small>
+                        </div>
+                    </div>
+                    <div class="space-30 hidden visible-xs"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Price-Area-End -->
+    <!-- Footer-Area -->
+    <footer class="footer-area" id="contact_page">
+        <div class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="page-title text-center">
+                            <h5 class="title">Contact US</h5>
+                            <div class="space-60"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-map-marker"></span>
+                            </div>
+                            <p>Jl. Grafika No. 3 <br /> Sleman, Yogyakarta</p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-phone-handset"></span>
+                            </div>
+                            <p>Muhammad Wafa <br> +62 8228 1199 234</p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="lnr lnr-envelope"></span>
+                            </div>
+                            <p>aku@mwafa.net <br /> wafax.4@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <span>Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="lnr lnr-heart"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                target="_blank">Colorlib</a></span>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom-End -->
+    </footer>
+    <!-- Footer-Area-End -->
+    <!--Vendor-JS-->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <!--Plugin-JS-->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <!-- <script src="js/ajaxchimp.js"></script> -->
+    <script src="js/scrollUp.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!--Main-active-JS-->
+    <script src="js/main.js"></script>
+
+    <script>
+        $('#mc-form').submit(e => {
+            e.preventDefault()
+            let text = $('#mc-text').val()
+            $("#cucianku").addClass('d-none')
+            $("#cari-status").text('loading...')
+            $.getJSON(
+                `/core/api/cari?q=${text}`,
+                data => {
+                    if(data.length)
+                    {
+                        $("#cari-status").text('Data Cucian')
+                        data = data[0]
+                        $("#cucian-id").text(data.id)
+                        $("#cucian-nama").text(data.pelanggan)
+                        $("#cucian-status").text(data.status)
+                        $("#cucian-masuk").text(data.tanggal_masuk)
+                        $("#cucian-harga").text(data.harga)
+                        $("#cucian-berat").text(data.jumlah)
+                        $("#cucian-bayar").text(data.bayar)
+                        $("#cucianku").removeClass('d-none')
+                    }
+                    else{
+                        $("#cari-status").text('Data didak ditemukan.')
+                    }
+
+                }
+            )
+        })
+    </script>
+</body>
+
+</html>

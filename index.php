@@ -1,5 +1,5 @@
 <?php
 
-header("Location: /core");
+header("Location: /user");
 
 ?>
