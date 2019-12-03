@@ -14,6 +14,7 @@ class Cucian extends CI_Controller {
 		$this->data = array();
         $this->data["me"] = $this->user->me();
         $this->data['old'] = false;
+        $this->issendEmail = false; // change true if server can send email.
 	}
 
 	function isLogin()
@@ -71,7 +72,10 @@ class Cucian extends CI_Controller {
         if($update)
         {
             $this->data['alert'] = "Cucian dengan kode <b>$id</b> selesai diproses";
-            $this->send_email($id);
+            if($this->issendEmail)
+            {
+                $this->send_email($id);
+            }
         }
         $this->index();
         
@@ -89,7 +93,10 @@ class Cucian extends CI_Controller {
         if($update)
         {
             $this->data['alert'] = "Cucian dengan kode <b>$id</b> telah diambil pelanggan";
-            $this->send_email($id);
+            if($this->issendEmail)
+            {
+                $this->send_email($id);
+            }
         }
         $this->index();
     }
