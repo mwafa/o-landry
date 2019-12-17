@@ -1,7 +1,9 @@
-Proyek ini didedikasikan untuk menyelesaikan tugas matakuliah __Sistem Basis Data__.
-<!-- Anggota Kelompok:
+Proyek ini didedikasikan untuk menyelesaikan tugas matakuliah __Sistem Basis Data__.\
+Anggota Kelompok:
 1. Muhammad Wafa (43515)
-1. Muhammad Wafa () -->
+1. Andi Fathy Ahmad Fahrezy (43270)
+1. M. Try Agung Saputra R (43033)
+1. Monita Prysacy Melanti (44594)
 
 # Cara Install
 
@@ -28,8 +30,16 @@ $config['base_url'] = 'http://loman.localhost/core/';
 ```php
     $this->issendEmail = false; // change true if server can send email.
 ```
+4. Default user admin
 
+> + Username: __admin__
+> + Password: __dienteraja__
 # Halaman
 
 1. __/core__ : Halaman admin
 2. __/user__ : Halaman user untuk cek cucian
+
+# Github Project:
+URL: `https://github.com/mwafa/o-landry`
+
+List Query: [Klik Disini](querys.md)
